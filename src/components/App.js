@@ -32,14 +32,12 @@ function App() {
     });
   };
 
-  const filteredPeoplesByQuery = helpers.filterPeoplesListByName(
-    peoples,
-    query
-  );
+  const filteredPeoplesByQuery = helpers.filterPeoplesList(peoples, query);
 
   return (
     <div className="App">
       {error && "Something going wrong"}
+      {!!!peoples.length && <h2>Loading...</h2>}
       {!!peoples.length && (
         <>
           <FindPeopleForm query={query} handleChange={handleChange} />

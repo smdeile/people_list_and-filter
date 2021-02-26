@@ -6,8 +6,8 @@ const FindPeopleForm = ({ query, handleChange }) => {
 
   return (
     <section className={css.wrapper}>
-      <h2>Фильтры</h2>
-      <label htmlFor={name} className={css.textLabel}>
+      <h2 className={css.borderBottom}>Фильтры</h2>
+      <label htmlFor={name} className={`${css.textLabel} ${css.borderBottom}`}>
         Имя
         <input
           type="text"
@@ -17,7 +17,7 @@ const FindPeopleForm = ({ query, handleChange }) => {
           onChange={handleChange}
         />
       </label>
-      <label className={css.textLabel}>
+      <label className={`${css.textLabel} ${css.borderBottom}`}>
         Фамилия
         <input
           type="text"
@@ -26,30 +26,32 @@ const FindPeopleForm = ({ query, handleChange }) => {
           onChange={handleChange}
         />
       </label>
-      <label className={css.textLabel}>
+      <label className={`${css.textLabel} ${css.borderBottom}`}>
         Возраст
         <input type="text" name="age" value={age} onChange={handleChange} />
       </label>
-      <div className={css.checkboxesBlock}>
+      <div className={`${css.checkboxWrapper} ${css.borderBottom}`}>
         <h2>Пол</h2>
-        <label>
-          М
-          <input
-            type="checkbox"
-            checked={male}
-            name="male"
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Ж
-          <input
-            type="checkbox"
-            checked={female}
-            name="female"
-            onChange={handleChange}
-          />
-        </label>
+        <div className={css.checkboxesBlock}>
+          <label>
+            М
+            <input
+              type="checkbox"
+              checked={male}
+              name="male"
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            Ж
+            <input
+              type="checkbox"
+              checked={female}
+              name="female"
+              onChange={handleChange}
+            />
+          </label>
+        </div>
       </div>
     </section>
   );

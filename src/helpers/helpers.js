@@ -1,8 +1,8 @@
-export const filterPeoplesListByName = (arr, query) => {
+export const filterPeoplesList = (arr, query) => {
   let newArr = [...arr];
   const arrOfKeys = Object.keys(query);
 
-  newArr.map((people) => {
+  newArr.map((people) =>
     arrOfKeys.map((key) => {
       if (people[key] && query[key]) {
         const filteredArr = newArr.filter((item) => {
@@ -16,18 +16,18 @@ export const filterPeoplesListByName = (arr, query) => {
 
         newArr = [...filteredArr];
       } else if (typeof query[key] === "boolean" && query[key] === false) {
-        const genderF = newArr.filter((item) => {
-          if (key === "male") {
-            return item.sex === "f";
-          }
-          if (key === "female") {
+        const genderFind = newArr.filter((item) => {
+          if (key !== "male") {
             return item.sex === "m";
           }
+          if (key !== "female") {
+            return item.sex === "f";
+          }
         });
-        newArr = [...genderF];
+        return (newArr = [...genderFind]);
       }
-    });
-  });
+    })
+  );
 
   return newArr;
 };

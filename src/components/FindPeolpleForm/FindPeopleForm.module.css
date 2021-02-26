@@ -2,23 +2,38 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
-  margin: 0 auto;
+  padding: 10px;
 }
+
 .textLabel {
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin-bottom: 10px;
 }
-.checkboxesBlock {
+
+.borderBottom {
+  border-bottom: 1px dotted rgb(221, 204, 204);
+}
+.checkboxWrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 }
+.checkboxesBlock {
+  width: 177px;
+  display: flex;
+  justify-content: space-between;
+}
 .checkboxesBlock h2 {
   margin: 0;
   font-size: 16px;
   font-weight: 400;
+}
+@media (min-width: 768px) {
+  .wrapper {
+    width: 50%;
+    margin: 0 auto;
+  }
 }
